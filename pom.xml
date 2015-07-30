@@ -43,6 +43,7 @@
 		<commons-dbcp.version>1.2.2</commons-dbcp.version>
 		<jstl.version>1.2</jstl.version>
 		<javaee-api.version>7.0</javaee-api.version>
+		<commons-lang.version>3.4</commons-lang.version>
 	</properties>
 
 	<dependencyManagement>
@@ -64,6 +65,12 @@
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang.version}</version>
 			</dependency>
 			<!-- 邮件测试 -->
 			<dependency>
@@ -211,7 +218,7 @@
 				<artifactId>commons-io</artifactId>
 				<version>${commons-io.version}</version>
 			</dependency>
-			
+
 			<!-- 常用编码方法的工具类 -->
 			<dependency>
 				<groupId>commons-codec</groupId>
