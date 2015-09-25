@@ -44,10 +44,19 @@
 		<jstl.version>1.2</jstl.version>
 		<javaee-api.version>7.0</javaee-api.version>
 		<commons-lang.version>3.4</commons-lang.version>
+		<jmockit.version>1.18</jmockit.version>
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+		<jayway.jsonpath.version>0.9.0</jayway.jsonpath.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${javax.servlet-api.version}</version>
+			</dependency>
+			
 			<dependency>
 				<groupId>com.robot</groupId>
 				<artifactId>turnip-api</artifactId>
@@ -60,13 +69,37 @@
 				<version>${turnip.version}</version>
 			</dependency>
 
+			<!-- 对controller做单测的时候，返回的数据为json的时候，需要引用这个jar包 -->
+			<dependency>
+				<groupId>com.jayway.jsonpath</groupId>
+				<artifactId>json-path</artifactId>
+				<version>${jayway.jsonpath.version}</version>
+			</dependency>
+
+			<!-- Mocking tools -->
+			<dependency>
+				<groupId>org.jmockit</groupId>
+				<artifactId>jmockit</artifactId>
+				<version>${jmockit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- Code coverage tool -->
+			<dependency>
+				<groupId>org.jmockit</groupId>
+				<artifactId>jmockit-coverage</artifactId>
+				<version>${jmockit.version}</version>
+				<scope>runtime</scope>
+				<optional>true</optional>
+			</dependency>
+
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
